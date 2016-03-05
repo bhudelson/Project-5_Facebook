@@ -9,13 +9,13 @@
 import UIKit
 
 class NewsFeedViewController: UIViewController {
-    @IBOutlet weak var scrollView: UIScrollView!
     
-    @IBOutlet weak var pictureView: UIImageView!
+    @IBOutlet weak var scrollView: UIScrollView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrollView.contentSize = pictureView.image!.size
+        
+        scrollView.contentSize = CGSize(width: 320, height: 1320)
 
         // Do any additional setup after loading the view.
     }
