@@ -11,6 +11,10 @@ import UIKit
 class NewsFeedViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var textField: UITextField!
+    
+    @IBOutlet weak var buttonView: UIButton!
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,15 +29,19 @@ class NewsFeedViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
 
-    /*
-    // MARK: - Navigation
+//    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+//        var destinationViewController = segue.destinationViewController as! PhotoViewController
+//        
+//        destinationViewController.image = self.imageView.image
+//        
+//    }
+    
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        print("about to transition")
     }
-    */
+
 
 }

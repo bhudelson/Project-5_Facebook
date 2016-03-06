@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC2CFE591C8BA9CE003A6498 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2CFE581C8BA9CE003A6498 /* PhotoViewController.swift */; };
+		CC2CFE5C1C8BB2A6003A6498 /* BaseTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2CFE5A1C8BB2A6003A6498 /* BaseTransition.swift */; };
+		CC2CFE5D1C8BB2A6003A6498 /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2CFE5B1C8BB2A6003A6498 /* FadeTransition.swift */; };
 		CC2E23031C62FA4900CE9798 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2E23021C62FA4900CE9798 /* AppDelegate.swift */; };
 		CC2E23051C62FA4900CE9798 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2E23041C62FA4900CE9798 /* ViewController.swift */; };
 		CC2E23081C62FA4900CE9798 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC2E23061C62FA4900CE9798 /* Main.storyboard */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC2CFE581C8BA9CE003A6498 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		CC2CFE5A1C8BB2A6003A6498 /* BaseTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTransition.swift; sourceTree = "<group>"; };
+		CC2CFE5B1C8BB2A6003A6498 /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
 		CC2E22FF1C62FA4900CE9798 /* Facebook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Facebook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC2E23021C62FA4900CE9798 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC2E23041C62FA4900CE9798 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,9 +79,10 @@
 				CC2E23021C62FA4900CE9798 /* AppDelegate.swift */,
 				CC2E23041C62FA4900CE9798 /* ViewController.swift */,
 				CC2E23061C62FA4900CE9798 /* Main.storyboard */,
+				CC2CFE581C8BA9CE003A6498 /* PhotoViewController.swift */,
 				CC88C33C1C6C354B00BB0E5F /* LoginViewController.swift */,
 				CC88C33A1C6C352C00BB0E5F /* Common.swift */,
-				CC2E23161C63010800CE9798 /* view controllers */,
+				CC2E23161C63010800CE9798 /* swift files */,
 				CC2E23091C62FA4900CE9798 /* Assets.xcassets */,
 				CC2E230B1C62FA4900CE9798 /* LaunchScreen.storyboard */,
 				CC2E230E1C62FA4900CE9798 /* Info.plist */,
@@ -83,9 +90,11 @@
 			path = Facebook;
 			sourceTree = "<group>";
 		};
-		CC2E23161C63010800CE9798 /* view controllers */ = {
+		CC2E23161C63010800CE9798 /* swift files */ = {
 			isa = PBXGroup;
 			children = (
+				CC2CFE5A1C8BB2A6003A6498 /* BaseTransition.swift */,
+				CC2CFE5B1C8BB2A6003A6498 /* FadeTransition.swift */,
 				CC2E23211C63106A00CE9798 /* DetailViewController.swift */,
 				CC2E231F1C6302E100CE9798 /* NotificationsViewController.swift */,
 				CC2E231D1C6302B400CE9798 /* MoreViewController.swift */,
@@ -93,7 +102,7 @@
 				CC2E23191C63026700CE9798 /* RequestsViewController.swift */,
 				CC2E23171C63021C00CE9798 /* NewsFeedViewController.swift */,
 			);
-			name = "view controllers";
+			name = "swift files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC2E231C1C63028E00CE9798 /* MessagesViewController.swift in Sources */,
+				CC2CFE5C1C8BB2A6003A6498 /* BaseTransition.swift in Sources */,
 				CC2E23051C62FA4900CE9798 /* ViewController.swift in Sources */,
 				CC2E23031C62FA4900CE9798 /* AppDelegate.swift in Sources */,
 				CC2E231E1C6302B400CE9798 /* MoreViewController.swift in Sources */,
@@ -178,6 +188,8 @@
 				CC2E23181C63021C00CE9798 /* NewsFeedViewController.swift in Sources */,
 				CC88C33D1C6C354B00BB0E5F /* LoginViewController.swift in Sources */,
 				CC2E23221C63106A00CE9798 /* DetailViewController.swift in Sources */,
+				CC2CFE5D1C8BB2A6003A6498 /* FadeTransition.swift in Sources */,
+				CC2CFE591C8BA9CE003A6498 /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
