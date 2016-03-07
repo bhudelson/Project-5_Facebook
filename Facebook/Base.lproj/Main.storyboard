@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="lsC-Lc-5Jq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="sF4-0i-rdR">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -80,7 +80,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1100" y="1635"/>
+            <point key="canvasLocation" x="-184" y="1698"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Cg3-Dv-BSD">
@@ -190,23 +190,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="gfu-ob-ZzQ">
-                                <rect key="frame" x="0.0" y="64" width="320" height="456"/>
+                                <rect key="frame" x="0.0" y="109" width="320" height="515"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="home_feed-1" id="CT1-cV-aKT">
-                                        <rect key="frame" x="0.0" y="-64" width="320" height="1438"/>
+                                        <rect key="frame" x="0.0" y="-5" width="320" height="1438"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="wedding1" id="raQ-Ny-xaw">
-                                        <rect key="frame" x="4" y="19" width="154" height="155"/>
+                                        <rect key="frame" x="4" y="78" width="154" height="155"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <gestureRecognizers/>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="qZD-RT-dyz" appends="YES" id="koT-af-CrQ"/>
+                                            <outletCollection property="gestureRecognizers" destination="5aq-UL-Ant" appends="YES" id="MzE-0p-fxZ"/>
                                         </connections>
                                     </imageView>
                                 </subviews>
                             </scrollView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="nav" id="xfv-yx-HmT">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="compose" id="2Lq-ek-Tbu">
+                                <rect key="frame" x="0.0" y="64" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -214,17 +222,17 @@
                     <connections>
                         <outlet property="feedImage" destination="raQ-Ny-xaw" id="KuA-8Y-eTn"/>
                         <outlet property="scrollView" destination="gfu-ob-ZzQ" id="Ogd-a4-4FS"/>
+                        <segue destination="KSL-f1-znV" kind="modal" identifier="photoSegue" id="vtW-ez-gyB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4m6-6O-T0j" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="qZD-RT-dyz">
+                <tapGestureRecognizer id="5aq-UL-Ant">
                     <connections>
-                        <action selector="didTapImage:" destination="sF4-0i-rdR" id="OCe-Tn-hH7"/>
-                        <segue destination="KSL-f1-znV" kind="modal" identifier="photoSegue" id="FYI-HC-rEi"/>
+                        <action selector="didTapImage:" destination="sF4-0i-rdR" id="313-5h-bCe"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-647" y="1665"/>
+            <point key="canvasLocation" x="-647" y="1698"/>
         </scene>
         <!--Messages View Controller-->
         <scene sceneID="hLr-Gp-mWl">
@@ -303,9 +311,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="sF4-0i-rdR" kind="relationship" relationship="rootViewController" id="usV-Nq-arc"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HJp-VO-eqR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -389,6 +394,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="compose" width="320" height="46"/>
         <image name="doneButton" width="51" height="27"/>
         <image name="feed_tab" width="27" height="27"/>
         <image name="form_bg" width="295" height="95"/>
@@ -399,6 +405,7 @@
         <image name="logo" width="174" height="43"/>
         <image name="messages_tab" width="27" height="27"/>
         <image name="more_tab" width="27" height="27"/>
+        <image name="nav" width="320" height="64"/>
         <image name="notifications_tab" width="27" height="27"/>
         <image name="photo_actions" width="320" height="44"/>
         <image name="requests_tab" width="27" height="27"/>

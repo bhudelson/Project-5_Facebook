@@ -30,7 +30,7 @@ class NewsFeedViewController: UIViewController {
 //        
 //        lightBoxTransition = LightBoxTransition ()
         
-        scrollView.contentSize = CGSize(width: 320, height: 1320)
+        scrollView.contentSize = CGSize(width: 320, height: 1490)
 
         photoTransition = PhotoTransition()
     }

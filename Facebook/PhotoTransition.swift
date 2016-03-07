@@ -18,7 +18,7 @@ class PhotoTransition: BaseTransition {
         let photoViewController = toViewController as! PhotoViewController
         let destinationImageFrame = photoViewController.imageView.frame
         
-        //cloning the view
+        //Clone the view
         movingImageView.frame = newsFeedViewController.selectedImageView.frame
         movingImageView.image = newsFeedViewController.selectedImageView.image
         movingImageView.clipsToBounds = newsFeedViewController.selectedImageView.clipsToBounds
@@ -26,7 +26,7 @@ class PhotoTransition: BaseTransition {
         
         containerView.addSubview(movingImageView)
         
-        //Subtract offset from scrollview in case it has changed
+        //Subtract offset from scrollview
         movingImageView.frame.origin.y -= newsFeedViewController.scrollView.contentOffset.y
         
         //Hide initial and final images
@@ -36,26 +36,23 @@ class PhotoTransition: BaseTransition {
         UIView.animateWithDuration(duration, animations: {
             
             
-            
             photoViewController.imageView.alpha = 1
             movingImageView.frame = destinationImageFrame
             
             //Sets newly created image view frame to the destination frame
-            //movingImageView.frame = photoViewController.weddingImageView.frame
             
             }) { (finished: Bool) -> Void in
                 
                 movingImageView.hidden = true
                 photoViewController.imageView.hidden = false
                 
-                //feedViewController.selectedImageView.alpha = 1
                 self.finish()
         }
     }
     
     override func dismissTransition(containerView: UIView, fromViewController: UIViewController, toViewController: UIViewController) {
         
-        //movingImageView.removeFromSuperview()
+       
         
         let movingImageView = UIImageView()
         
@@ -64,7 +61,7 @@ class PhotoTransition: BaseTransition {
         let photoViewController = fromViewController as! PhotoViewController
         var destinationImageFrame = newsFeedViewController.selectedImageView.frame
         
-        //cloning the view
+        //Clone the view
         movingImageView.frame = photoViewController.imageView.frame
         movingImageView.image = photoViewController.imageView.image
         movingImageView.clipsToBounds = photoViewController.imageView.clipsToBounds
@@ -72,14 +69,13 @@ class PhotoTransition: BaseTransition {
         
         containerView.addSubview(movingImageView)
         
-        //Subtract offset from scrollview in case it has changed
+        //Subtract offset from scrollview
         destinationImageFrame.origin.y -= newsFeedViewController.scrollView.contentOffset.y
         
         //Hide initial and final images
         newsFeedViewController.selectedImageView.hidden = true
         photoViewController.imageView.hidden = true
         
-        //        fromViewController.view.alpha = 1
         
         UIView.animateWithDuration(duration, animations: {
             
