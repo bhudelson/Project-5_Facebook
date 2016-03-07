@@ -13,14 +13,16 @@ class PhotoViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var blackBgView: UIView!
     
     var image: UIImage!
+    var targetOriginalCenter: CGPoint!
+    var photoTransition: PhotoTransition!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imageView.image = image
+//        imageView.image = image
 
         // Do any additional setup after loading the view.
     }
@@ -46,6 +48,46 @@ class PhotoViewController: UIViewController {
     
     
 
+    @IBAction func didPanPhoto(sender: UIPanGestureRecognizer) {
+        
+        let translation = sender.translationInView(view)
+        let velocity = sender.velocityInView(view)
+        
+        
+        if sender.state == UIGestureRecognizerState.Began {
+            targetOriginalCenter = imageView.center
+            UIView.animateWithDuration(0.3, animations: { () -> Void in
+                self.doneButton.alpha = 0
+            })
+            
+        } else if sender.state == UIGestureRecognizerState.Changed {
+            imageView.center = CGPoint(x: targetOriginalCenter.x + translation.x, y: targetOriginalCenter.y + translation.y)
+            
+            if translation.y > 0 {
+                blackBgView.backgroundColor = UIColor(white: 0, alpha: (50 / translation.y))
+                print(view.backgroundColor)
+            } else if translation.y < 0 {
+                blackBgView.backgroundColor = UIColor(white: 0, alpha: (50 / translation.y * -1))
+            }
+            
+        } else if sender.state == UIGestureRecognizerState.Ended {
+            UIView.animateWithDuration(0.3, animations: { () -> Void in
+                self.doneButton.alpha = 1
+            })
+            if translation.y > 100 {
+                dismissViewControllerAnimated(true, completion: nil)
+            } else if translation.y < -100 {
+                dismissViewControllerAnimated(true, completion: nil)
+            } else {
+                UIView.animateWithDuration(0.3, animations: { () -> Void in
+                    self.imageView.center = self.targetOriginalCenter
+                    self.view.backgroundColor = UIColor(white: 0, alpha: 1)
+                })
+            }
+            
+        }
+        
+    }
 
     
     

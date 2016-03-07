@@ -11,17 +11,28 @@ import UIKit
 class NewsFeedViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var feedImage: UIImageView!
     
-    @IBOutlet weak var buttonView: UIButton!
-   
+    var selectedImageView: UIImageView!
+    
+    var photoTransition: PhotoTransition!
+    
+//    var fadeTransition: FadeTransition!
+//    
+//    var lightBoxTransition = LightBoxTransition!()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
+//        fadeTransition = FadeTransition()
+//        
+//        lightBoxTransition = LightBoxTransition ()
+        
         scrollView.contentSize = CGSize(width: 320, height: 1320)
 
-        // Do any additional setup after loading the view.
+        photoTransition = PhotoTransition()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,17 +40,33 @@ class NewsFeedViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-
-//    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-//        var destinationViewController = segue.destinationViewController as! PhotoViewController
-//        
-//        destinationViewController.image = self.imageView.image
-//        
-//    }
-    
+    @IBAction func didTapImage(sender: UITapGestureRecognizer) {
+        
+        selectedImageView = sender.view as! UIImageView
+        
+        //trigger segue on tap
+        performSegueWithIdentifier("photoSegue", sender: nil)
+        
+    }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        let photoViewController = segue.destinationViewController as! PhotoViewController
+        
+        //Trigger custom transition
+        photoViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+        photoViewController.transitioningDelegate = photoTransition
+        
+        photoTransition.duration = 0.3
+        
+        photoViewController.view.layoutIfNeeded()
+        
+        
+        photoViewController.imageView.image = selectedImageView.image
+
+        
+
+        
         print("about to transition")
     }
 

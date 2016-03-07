@@ -32,6 +32,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" id="iJZ-P8-99B">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="photo_actions" id="zXV-12-cWs">
                                         <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
@@ -50,15 +55,11 @@
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="wedding1" id="alH-Rs-6d9">
                                         <rect key="frame" x="0.0" y="46" width="320" height="480"/>
                                         <autoresizingMask key="autoresizingMask"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="XIF-ih-NaI" appends="YES" id="Vz4-ed-wos"/>
+                                        </connections>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="J3o-ZJ-pEX">
-                                        <rect key="frame" x="86" y="84" width="211" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </scrollView>
@@ -66,13 +67,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="blackBgView" destination="iJZ-P8-99B" id="zkX-hc-HPX"/>
                         <outlet property="doneButton" destination="mwv-JH-XsZ" id="PQy-zh-IqL"/>
                         <outlet property="imageView" destination="alH-Rs-6d9" id="3GI-Pj-MI0"/>
-                        <outlet property="label" destination="J3o-ZJ-pEX" id="hUS-5N-LRA"/>
                         <outlet property="scrollView" destination="xZL-yD-L1i" id="bJT-sa-ddc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bHK-Fe-3xT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="XIF-ih-NaI">
+                    <connections>
+                        <action selector="didPanPhoto:" destination="KSL-f1-znV" id="ael-MO-oGD"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1100" y="1635"/>
         </scene>
@@ -195,21 +201,10 @@
                                         <rect key="frame" x="4" y="19" width="154" height="155"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <gestureRecognizers/>
-                                    </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="ajK-8I-dTh">
-                                        <rect key="frame" x="38" y="284" width="141" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Tee-Ah-2bL">
-                                        <rect key="frame" x="23" y="126" width="81" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
                                         <connections>
-                                            <segue destination="KSL-f1-znV" kind="modal" id="uGc-Ad-c1G"/>
+                                            <outletCollection property="gestureRecognizers" destination="qZD-RT-dyz" appends="YES" id="koT-af-CrQ"/>
                                         </connections>
-                                    </button>
+                                    </imageView>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -217,12 +212,17 @@
                     </view>
                     <navigationItem key="navigationItem" id="K7h-Ry-OvF"/>
                     <connections>
-                        <outlet property="buttonView" destination="Tee-Ah-2bL" id="CQV-2B-BcG"/>
+                        <outlet property="feedImage" destination="raQ-Ny-xaw" id="KuA-8Y-eTn"/>
                         <outlet property="scrollView" destination="gfu-ob-ZzQ" id="Ogd-a4-4FS"/>
-                        <outlet property="textField" destination="ajK-8I-dTh" id="WIl-lT-2IH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4m6-6O-T0j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="qZD-RT-dyz">
+                    <connections>
+                        <action selector="didTapImage:" destination="sF4-0i-rdR" id="OCe-Tn-hH7"/>
+                        <segue destination="KSL-f1-znV" kind="modal" identifier="photoSegue" id="FYI-HC-rEi"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-647" y="1665"/>
         </scene>
